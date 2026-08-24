@@ -3,7 +3,6 @@ import time
 import sys
 import unittest.mock as mock
 
-# Tkinter bağımlılığını web ortamında engellemek için mock'luyoruz
 if 'tkinter' not in sys.modules:
     sys.modules['tkinter'] = mock.MagicMock()
     sys.modules['tkinter.ttk'] = mock.MagicMock()
@@ -17,17 +16,14 @@ st.set_page_config(
     layout="centered"
 )
 
-# Streamlit Mock Root Sınıfı
 class StreamlitRootMock:
-    def __init__(self):
-        pass
+    def __init__(self): pass
     def title(self, t): pass
     def geometry(self, g): pass
     def configure(self, **kwargs): pass
     def after(self, ms, callback, *args): pass
     def mainloop(self): pass
 
-# Oyun nesnesini Session State içinde saklıyoruz (Sayfa yenilense bile sıfırlanmaz)
 if 'game_instance' not in st.session_state:
     root_mock = StreamlitRootMock()
     st.session_state.game = LoopKnight(root_mock)
@@ -35,9 +31,9 @@ if 'game_instance' not in st.session_state:
 
 game = st.session_state.game
 
-# Otomatik Arkadaş/Zehir/Ateş Döngüleri (Saniyelik Güncelleme)
+# Otomatik Arkadaş/Zehir/Ateş Döngüleri
 now = time.time()
-if now - st.session_state.last_tick >= 1.0:
+if now - st.session_state.get('last_tick', now) >= 1.0:
     if game.current_monster_hp > 0:
         dps = game.get_auto_dps()
         if dps > 0:
@@ -50,7 +46,6 @@ if now - st.session_state.last_tick >= 1.0:
 # --- ARAYÜZ (UI) ---
 st.title("🛡️ LoopKnight - Tarayıcı Sürümü")
 
-# Üst Bilgiler
 col1, col2 = st.columns(2)
 with col1:
     st.metric("💰 Altın", game.format_number(game.altin))
@@ -61,7 +56,6 @@ with col2:
 
 st.divider()
 
-# Düşman Bilgisi ve Can Barı
 is_boss_check = getattr(game, 'is_boss', (game.kademe == 10))
 monster_name = game.get_monster_name(game.asama, game.kademe, is_boss_check)
 st.subheader(monster_name)
@@ -69,7 +63,6 @@ st.subheader(monster_name)
 max_hp = game.current_monster_max_hp if game.current_monster_max_hp > 0 else 1
 cur_hp = max(0, game.current_monster_hp)
 hp_percent = min(1.0, cur_hp / max_hp)
-
 st.progress(hp_percent, text=f"HP: {game.format_number(cur_hp)} / {game.format_number(max_hp)}")
 
 # SALDIRI BUTONU
@@ -80,7 +73,6 @@ if st.button(f"⚔️ SALDIR! (Tıklama Hasarı: {game.format_number(click_dmg)}
 
 st.divider()
 
-# Satın Alma Çarpanı Seçimi (x1, x10, x100)
 st.markdown("##### Satın Alma Çarpanı")
 m_cols = st.columns(3)
 with m_cols[0]:
@@ -99,7 +91,6 @@ with m_cols[2]:
 st.write(f"Aktif Çarpan: **x{game.buy_multiplier}**")
 st.divider()
 
-# Sekmeler (Tablar)
 tab_up, tab_sw, tab_un, tab_stg = st.tabs(["🗡️ Geliştirmeler", "⚔️ Kılıçlar", "🛡️ Askerler", "🏰 Zindanlar"])
 
 with tab_up:
@@ -154,7 +145,6 @@ with tab_un:
             st.caption(f"DPS: +{game.format_number(game.get_unit_dps(uk))}/sn | {desc_u}")
         with c2:
             if st.button(f"Kirala (x{game.buy_multiplier})\n💰 {game.format_number(total_buy_cost)}", key=f"un_{uk}", disabled=(game.altin < total_buy_cost)):
-                # Asker satın alma mantığı tetikleniyor
                 cnt = game.buy_multiplier
                 base_cost = game.units[uk][5]
                 total_cost_val = game.get_multi_cost(base_cost, 1.35, cnt)
@@ -180,7 +170,3 @@ with tab_stg:
                     st.rerun()
             else:
                 st.info("Aktif")
-
-# Canlı akış için otomatik sayfa yenileme tetikleyicisi
-time.sleep(1)
-st.rerun()
