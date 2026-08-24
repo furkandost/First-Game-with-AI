@@ -1,8 +1,8 @@
 import streamlit as st
-import time
 import sys
 import unittest.mock as mock
 
+# Tkinter bağımlılığını güvenli bir şekilde mock'luyoruz
 if 'tkinter' not in sys.modules:
     sys.modules['tkinter'] = mock.MagicMock()
     sys.modules['tkinter.ttk'] = mock.MagicMock()
@@ -27,23 +27,10 @@ class StreamlitRootMock:
 if 'game_instance' not in st.session_state:
     root_mock = StreamlitRootMock()
     st.session_state.game = LoopKnight(root_mock)
-    st.session_state.last_tick = time.time()
 
 game = st.session_state.game
 
-# Otomatik Arkadaş/Zehir/Ateş Döngüleri
-now = time.time()
-if now - st.session_state.get('last_tick', now) >= 1.0:
-    if game.current_monster_hp > 0:
-        dps = game.get_auto_dps()
-        if dps > 0:
-            arm = int(game.current_monster_defense * (1.0 - game.stats["zirh_delme"][0]))
-            game.current_monster_hp -= max(1, int(dps - arm))
-            if game.current_monster_hp <= 0:
-                game.monster_defeated()
-    st.session_state.last_tick = now
-
-# --- ARAYÜZ (UI) ---
+# --- ARAYÜZ ---
 st.title("🛡️ LoopKnight - Tarayıcı Sürümü")
 
 col1, col2 = st.columns(2)
