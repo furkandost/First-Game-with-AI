@@ -1,14 +1,12 @@
 import sys
 import unittest.mock as mock
 
-# Tkinter'ın sistemde aranmasını en başta tamamen engelliyoruz
-sys.modules['tkinter'] = mock.MagicMock()
-sys.modules['tkinter.ttk'] = mock.MagicMock()
-sys.modules['tkinter.messagebox'] = mock.MagicMock()
+if 'tkinter' not in sys.modules:
+    sys.modules['tkinter'] = mock.MagicMock()
+    sys.modules['tkinter.ttk'] = mock.MagicMock()
+    sys.modules['tkinter.messagebox'] = mock.MagicMock()
 
 import streamlit as st
-import time
-
 from idlegame import LoopKnight
 
 st.set_page_config(
@@ -111,7 +109,7 @@ with tab_sw:
     for sk, v in game.swords.items():
         c1, c2 = st.columns([2, 1])
         with c1:
-            st.write(f"{v[4]} **{v[0]}** (+{v[1]}x Hasar)")
+            st.write(f"{v[4]} **{v[0]}** (+{v[1]}x Hasار)")
             st.caption(v[5])
         with c2:
             if v[3]:
