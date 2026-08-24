@@ -1,12 +1,13 @@
-import streamlit as st
 import sys
 import unittest.mock as mock
 
-# Tkinter bağımlılığını güvenli bir şekilde mock'luyoruz
-if 'tkinter' not in sys.modules:
-    sys.modules['tkinter'] = mock.MagicMock()
-    sys.modules['tkinter.ttk'] = mock.MagicMock()
-    sys.modules['tkinter.messagebox'] = mock.MagicMock()
+# Tkinter'ın sistemde aranmasını en başta tamamen engelliyoruz
+sys.modules['tkinter'] = mock.MagicMock()
+sys.modules['tkinter.ttk'] = mock.MagicMock()
+sys.modules['tkinter.messagebox'] = mock.MagicMock()
+
+import streamlit as st
+import time
 
 from idlegame import LoopKnight
 
