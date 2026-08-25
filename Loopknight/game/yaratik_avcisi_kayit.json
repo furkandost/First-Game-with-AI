@@ -1,0 +1,317 @@
+{
+    "altin": 22,
+    "zones_bones": 0,
+    "asama": 1,
+    "kademe": 2,
+    "max_ula\u015filan_asama": 1,
+    "max_ula\u015filan_kademe": 2,
+    "farm_modu": true,
+    "stats": {
+        "hasar": [
+            5,
+            15,
+            1.35,
+            null
+        ],
+        "sans": [
+            0.05,
+            75,
+            1.45,
+            0.85
+        ],
+        "kritik_hasar": [
+            1.5,
+            150,
+            1.55,
+            300.0
+        ],
+        "zirh_delme": [
+            0.0,
+            350,
+            2.1,
+            1.0
+        ],
+        "zehir": [
+            0,
+            1500,
+            3.2,
+            10
+        ]
+    },
+    "swords": {
+        "bakir": [
+            "Bak\u0131r K\u0131l\u0131\u00e7",
+            5.0,
+            150000,
+            false,
+            "\ud83d\udde1\ufe0f",
+            "Temel bronz."
+        ],
+        "elmas": [
+            "Elmas K\u0131l\u0131\u00e7",
+            7.0,
+            3000000,
+            false,
+            "\ud83d\udc8e",
+            "Keskin elmas."
+        ],
+        "uranyum": [
+            "Uranyum K\u0131l\u0131\u00e7",
+            10.0,
+            60000000,
+            false,
+            "\u2622\ufe0f",
+            "Radyoaktif."
+        ],
+        "banelyum": [
+            "Banelyum K\u0131l\u0131\u00e7",
+            15.0,
+            1200000000,
+            false,
+            "\ud83d\udd2e",
+            "Mistik karanl\u0131k."
+        ],
+        "kozmik": [
+            "Kozmik K\u0131l\u0131\u00e7",
+            30.0,
+            25000000000,
+            false,
+            "\ud83c\udf0c",
+            "Evrenin g\u00fcc\u00fc."
+        ],
+        "titanyum": [
+            "Titanyum K\u0131l\u0131\u00e7",
+            50.0,
+            500000000000,
+            false,
+            "\ud83d\udee1\ufe0f",
+            "Sa\u011flam titanyum."
+        ],
+        "cehennem": [
+            "Cehennem K\u0131l\u0131c\u0131",
+            90.0,
+            10000000000000,
+            false,
+            "\ud83d\udd25",
+            "Alev seli."
+        ],
+        "yildiz": [
+            "Y\u0131ld\u0131z K\u0131l\u0131c\u0131",
+            150.0,
+            220000000000000,
+            false,
+            "\ud83c\udf1f",
+            "Y\u0131ld\u0131z tozu."
+        ],
+        "ebedi": [
+            "Ebedi K\u0131l\u0131\u00e7",
+            300.0,
+            4500000000000000,
+            false,
+            "\u23f3",
+            "Zaman\u0131 b\u00fcken."
+        ],
+        "tanrisal": [
+            "Tanr\u0131sal K\u0131l\u0131\u00e7",
+            700.0,
+            90000000000000000,
+            false,
+            "\u26a1",
+            "Yaradan g\u00fcc\u00fc."
+        ]
+    },
+    "units": {
+        "okcu": [
+            "Ok\u00e7u",
+            2,
+            1,
+            0,
+            5,
+            36,
+            40,
+            750,
+            "\ud83c\udff9",
+            "H\u0131zl\u0131 at\u0131\u015f."
+        ],
+        "savasci": [
+            "Sava\u015f\u00e7\u0131",
+            0,
+            1,
+            0,
+            30,
+            160,
+            280,
+            4500,
+            "\u2694\ufe0f",
+            "Dengeli."
+        ],
+        "buyucu": [
+            "B\u00fcy\u00fcc\u00fc",
+            0,
+            1,
+            0,
+            200,
+            1400,
+            2200,
+            30000,
+            "\ud83e\uddd9\u200d\u2642\ufe0f",
+            "B\u00fcy\u00fc hasar\u0131."
+        ],
+        "suikastci": [
+            "Suikast\u00e7\u0131",
+            0,
+            1,
+            0,
+            1200,
+            11000,
+            18000,
+            220000,
+            "\ud83d\udde1\ufe0f",
+            "Z\u0131rh deler."
+        ],
+        "ejderha": [
+            "Ejderha",
+            0,
+            1,
+            0,
+            8000,
+            70000,
+            110000,
+            1500000,
+            "\ud83d\udc09",
+            "Alev g\u00fcc\u00fc."
+        ],
+        "fenix": [
+            "Anka Ku\u015fu",
+            0,
+            1,
+            0,
+            45000,
+            420000,
+            650000,
+            12000000,
+            "\ud83d\udd25",
+            "K\u00fcllerinden."
+        ],
+        "kraken": [
+            "Karanl\u0131k Kraken",
+            0,
+            1,
+            0,
+            250000,
+            2500500,
+            3800000,
+            90000000,
+            "\ud83d\udc19",
+            "Okyanus deh\u015feti."
+        ],
+        "valkyrie": [
+            "Valkyrie",
+            0,
+            1,
+            0,
+            1500000,
+            15000000,
+            22000000,
+            750000000,
+            "\ud83e\udd85",
+            "G\u00f6ksel sava\u015f\u00e7\u0131."
+        ],
+        "behemoth": [
+            "Behemoth",
+            0,
+            1,
+            0,
+            10000000,
+            90000000,
+            130000000,
+            6000000000,
+            "\ud83e\udda3",
+            "Durdurulamaz dev."
+        ],
+        "kronos": [
+            "Kronos",
+            0,
+            1,
+            0,
+            75000000,
+            600000000,
+            900000000,
+            45000000000,
+            "\u23f3",
+            "Zaman efendisi."
+        ]
+    },
+    "rb": {
+        "hasar": [
+            1.0,
+            8,
+            "\u2694\ufe0f Hasar \u00c7arpan\u0131 (+1.0x)",
+            "T\u0131klama ve asker hasar\u0131n\u0131 katlar.",
+            1.35
+        ],
+        "sans": [
+            1.0,
+            15,
+            "\ud83c\udfaf Kritik \u015eans \u00c7arpan\u0131 (+0.2x)",
+            "Kritik \u015fans\u0131 katlar.",
+            1.35
+        ],
+        "kritik_hasar": [
+            1.0,
+            25,
+            "\ud83d\udca5 Kritik Hasar \u00c7arpan\u0131 (+1.0x)",
+            "Kritik \u00e7arpan\u0131 y\u00fckseltir.",
+            1.35
+        ],
+        "bones": [
+            1.0,
+            30,
+            "\ud83e\uddb4 Zones Bones \u00c7arpan\u0131 (+x5.0)",
+            "Bones kazanc\u0131n\u0131 art\u0131r\u0131r.",
+            1.35
+        ],
+        "skill_power": [
+            1.0,
+            150000,
+            "\ud83c\udf00 Yetenek G\u00fcc\u00fc (+2.0x)",
+            "Yetenek \u00e7arpanlar\u0131n\u0131 katlar.",
+            1.35
+        ],
+        "skill_cd": [
+            0.0,
+            150,
+            "\u23f1\ufe0f Bekleme \u0130ndirimi (+%10)",
+            "Yetenek CD indirir.",
+            1.35
+        ],
+        "gold_mult": [
+            1.0,
+            75,
+            "\ud83d\udcb0 Alt\u0131n \u00c7arpan\u0131 (+1.0x)",
+            "Alt\u0131n miktar\u0131n\u0131 art\u0131r\u0131r.",
+            1.35
+        ],
+        "unit_speed": [
+            0,
+            150,
+            "\u26a1 Asker H\u0131z\u0131 Seviyesi",
+            "Vuru\u015f aral\u0131\u011f\u0131n\u0131 d\u00fc\u015f\u00fcr\u00fcr.",
+            1.35
+        ]
+    },
+    "pyro_cost": 10000000,
+    "total_clicks": 128,
+    "total_kills": 8,
+    "total_crits": 3,
+    "total_gold_earned": 69,
+    "total_boss_kills": 0,
+    "fuzuli_kills_counter": 3,
+    "stage_completions": {},
+    "perm_upgrades": {
+        "mistik_sovalye": false,
+        "karanliga_kulak_veren": false,
+        "eflatun": false
+    },
+    "claimed_quests": []
+}
